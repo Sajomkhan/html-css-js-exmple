@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Append li</title>
+  </head>
+  <body>
+    <div>
+      <ul id="demo_ul"></ul>
+    </div>
+
+    <script>
+      const tech = ["Jabascript", "TypeScript", "Nodejs", "MongoDB", "MySql"];
+
+      function showMessage() {
+        const demoUl = document.getElementById("demo_ul");
+
+        tech.map((item) => {
+          const createdLi = document.createElement("li");
+          demoUl.appendChild(createdLi);
+          createdLi.textContent = item;
+        });
+      }
+      showMessage();
+    </script>
+
+    <!-- <script>
+
+      function showMessage() {
+        const demoDiv = document.getElementById("demoDiv");
+        const ul = document.createElement("ul");
+        const li = document.createElement("li");
+        li.textContent = "The The Other Man";
+        demoDiv.appendChild(ul);
+        ul.appendChild(li);
+      }
+      showMessage();
+      
+    </script> -->
+
+    <!-- <script>
+      const person = { fname: "John", lname: "Doe", age: 25 };
+
+      let txt = "";
+      for (let x in person) {
+        txt += person[x] + " ";
+      }
+      // Result: John Doe 25
+      document.getElementById("demo").innerHTML = txt;
+    </script>
+
+    <script>
+      const cars = ["BMW", "Volvo", "Mini"];
+
+      let text = "";
+      for (let x of cars) {
+        text += x + "<br>";
+      }
+      // Result:  BMW <br> Volvo <br> Mini
+
+      document.getElementById("demo").innerHTML = text;
+    </script> -->
+
+    <!-- <script>
+      let sum = 0;
+      const numbers = [15, 10, 25];
+      numbers.forEach(myFunction);
+      
+      function myFunction(item) {
+        sum += item;
+      }
+      document.getElementById("demo").innerHTML = sum;
+        // Result: 50
+
+    </script> -->
+
+  </body>
+  <script src="/index.js"></script>
+</html>

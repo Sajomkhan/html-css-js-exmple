@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table Input</title>
+  </head>
+  <body>
+    <div style="width: 75%; margin: auto; margin-top: 30px;">
+      <h1>Student Data</h1>
+
+      <form
+        action=""
+        style="display: flex; flex-direction: column; width: 300px; gap: 15px;"
+      >
+        <input type="text" id="idno"/>
+        <input type="text" id="name" />
+        <input type="text" id="age" />
+        <input type="text" id="subject" />
+        <button onclick="createTable()">Add into table</button>
+      </form>
+
+      <table id="tbl" bgcolor="black" width="400" style="margin-top: 30px;">
+        <tr bgcolor="grey">
+            <th width="100">Id</th>
+            <th width="100">Name</th>
+            <th width="100">Age</th>
+            <th width="100">Subject</th>
+        </tr>
+        <tr bgcolor="lightgrey" align="center">
+            <td>1</td>
+            <td>Ajman</td>
+            <td>7</td>
+            <td>Engineer</td>
+        </tr>
+        <tr bgcolor="lightgrey" align="center">
+            <td>2</td>
+            <td>Abran</td>
+            <td>4</td>
+            <td>Science</td>
+        </tr>
+      </table>
+
+      <div id="tablearea"></div>
+    </div>
+
+    <script>
+        function createTable(){
+            let idno = document.querySelector("#idno").value;
+            let name = document.querySelector("#name").value;
+
+            let html = ""
+            for(let i=0; i<idno; i++){
+                html+="<h3>Hello</h3>"
+            }
+
+            document.getElementById("tablearea").innerHTML=html
+        }
+
+    </script>
+
+    <!-- <script>
+        const tbl = document.querySelector("#tbl")
+        function createTable(){
+            const createTr = document.createElement("tr")
+            const createTd = document.createElement("td")
+
+        }
+    </script> -->
+
+  </body>
+</html>

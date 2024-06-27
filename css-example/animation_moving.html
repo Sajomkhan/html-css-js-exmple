@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+  <div class="container">
+    <div class="card"></div>
+  </div>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      display: flex;
+      min-height: 100vh;
+    }
+    .container {
+      margin: auto;
+      border: 2px solid green;
+      width: 200px;
+      height: 200px;
+    }
+    .card {
+      margin: auto;
+      border: 2px solid rgb(178, 11, 208);
+      width: 40px;
+      height: 200px;
+      animation: animate linear 5s infinite;
+    }
+
+    @keyframes animate {
+      100%{ rotate: 360deg;}
+    }
+
+    .card::after {
+      content: ".";
+      color: white;
+      position: absolute;
+      top: 50%; 
+      left: 50%;
+      translate: -50% -50%;
+      background-color: green;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+    }
+  </style>
+    
+</body>
+</html>

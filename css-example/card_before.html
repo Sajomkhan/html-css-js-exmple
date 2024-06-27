@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="inner">
+        <h2>Hey</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente est
+          veritatis doloribus explicabo ipsa facere ex minus, incidunt
+          consequatur atque quam doloremque quos voluptatem, quibusdam
+          distinctio minima, sit dolorum quia?
+        </p>
+      </div>
+
+      <style>
+        body{
+            display: flex;
+            height: 100vh;
+        }
+        .container{
+            margin: auto;
+            position: relative;
+            width: 350px;
+            height: 250px;
+            background-color: rgb(202, 116, 116);
+            border-radius: 20px;
+        }
+        .inner{
+            position: absolute;
+            background: #f98cf5c4;
+            color: blue;
+            padding: 20px;
+            inset: 0;
+            border-radius: inherit;
+            p{
+                font-size: 15px;
+                text-align: justify;
+            }
+            &::before{
+                content: "";
+                border-radius: inherit;
+                background: rgba(44, 114, 150, 0.2);
+                position: absolute;
+                inset: 0;
+                clip-path: circle(30% at 0 0);   /* ('30% circle size' at 'x-axis%' 'y-axis%') */
+                transition: all .5s ease-in-out;
+            }
+            &:hover:before{
+                clip-path: circle(75%);
+            }
+        }
+      </style>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table</title>
+  </head>
+  <body>
+    <h1>Student Data</h1>
+    <table width="400" style="margin-top: 30px">
+      <thead></thead>
+      <tbody></tbody>
+    </table>
+
+    <script>
+      const data = [
+        { id: 1, name: "Azman", age: 7, subject: "Engineer" },
+        { id: 2, name: "Abran", age: 4, subject: "Science" },
+      ];
+
+      function getTh() {
+        const column = Object.keys(data[0]);
+        const head = document.querySelector("thead");
+        let tags = "<tr>";
+        for (i = 0; i < column.length; i++) {
+          tags += `<th>${column[i]}</th>`;
+        }
+        tags += "</tr>";
+        head.innerHTML = tags;
+
+        getTd();
+      }
+      function getTd() {
+        const body = document.querySelector("tbody");
+        let tags = "";
+
+        data.map(
+          (item) =>
+            (tags += `<tr>
+                <td>${item.id}</td>
+                <td>${item.name}</td>
+                <td>${item.age}</td>
+                <td>${item.subject}</td>
+                </tr>`)
+        );
+        body.innerHTML = tags;
+      }
+
+      getTh();
+    </script>
+
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid grey;
+        text-align: center;
+      }
+      table {
+        border-collapse: collapse;
+        thead {
+          text-transform: capitalize;
+        }
+      }
+    </style>
+  </body>
+</html>
