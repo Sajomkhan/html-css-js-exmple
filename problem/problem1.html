@@ -7,25 +7,35 @@
   </head>
   <body>
     <script>
-      // How to number of total fruits
+      // How many numbers of total fruits
       const fruits = [
         { Mango: 3, Orange: 2, Bannana: 5 },
         { Guava: 4, Apple: 2, Bannana: 10 },
         { Apple: 3, Orange: 2, Bannana: 20 },
       ];
+      let countedFruits = 0;
+      fruits.forEach((fruit) => {
+        for (key in fruit) {
+          countedFruits += fruit[key];
+        }
+      });
+      console.log(countedFruits);
+
+      //  How to create a single object of fruit summary
+      const fruits = [
+        { Mango: 3, Orange: 2, Bannana: 5 },
+        { Guava: 4, Apple: 2, Bannana: 10 },
+        { Apple: 3, Pineapple: 2, Bannana: 20 },
+      ];
       const countedFruits = {};
       fruits.forEach((fruit) => {
         for (key in fruit) {
-          if (countedFruits[key]) {
-            countedFruits[key] = countedFruits[key] + fruit[key];
-          } else {
-            countedFruits[key] = fruit[key];
-          }
+          countedFruits[key] = (countedFruits[key] || 0) + fruit[key];
         }
       });
-      console.log(countedFruits[key]);
+      console.log(countedFruits);
 
-      //   How to create a single object of fruit summary
+      //  or How to create a single object of fruit summary
       const fruits = [
         { Mango: 3, Orange: 2, Bannana: 5 },
         { Guava: 4, Apple: 2, Bannana: 10 },
@@ -36,6 +46,7 @@
 
       fruits.forEach((item) => {
         Object.entries(item).forEach(([fruit, quantity]) => {
+          // For each object, use Object.entries() to get the key-value pairs (fruit and quantity).
           fruitsSummary[fruit] = (fruitsSummary[fruit] || 0) + quantity;
         });
       });
@@ -50,6 +61,7 @@
       ];
 
       const fruitsSummary = fruits.reduce((summary, current) => {
+        // The reduce() function initializes an empty object ({}) as the accumulator (summary).
         for (const fruit in current) {
           summary[fruit] = (summary[fruit] || 0) + current[fruit];
         }
@@ -57,10 +69,6 @@
       }, {});
 
       console.log(fruitsSummary);
-
-
-
-      
     </script>
   </body>
 </html>

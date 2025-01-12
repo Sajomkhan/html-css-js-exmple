@@ -7,25 +7,19 @@
   </head>
   <body>
     <script>
-      const man = { name: "Ajom Khan", age: 42 };
-
       const fruits = [
         { Mango: 3, Orange: 2, Bannana: 5 },
         { Guava: 4, Apple: 2, Bannana: 10 },
         { Apple: 3, Orange: 2, Bannana: 20 },
       ];
-
-      const fruitsSummary = {};
-
-      fruits.forEach((item) => {
-        Object.entries(item).forEach(([fruit, quantity]) => {
-          fruitsSummary[fruit] = (fruitsSummary[fruit] || 0) + quantity;
-        });
+      let countedFruits = 0
+      fruits.forEach((fruit) => {
+        for (key in fruit) {
+            countedFruits += fruit[key];
+        }
       });
+      console.log(countedFruits);
 
-      console.log(fruitsSummary);
-
-      console.log(man);
     </script>
   </body>
 </html>
