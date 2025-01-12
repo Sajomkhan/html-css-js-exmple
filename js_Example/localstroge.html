@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="product" type="text" />
+    <p id="dis"></p>
+    <button onclick="handleSubmitProduct()">Submit</button>
+    <button onclick="localStorage.clear()">clear</button>
+
+    <script>
+      const product = ["mango", "orange"];
+
+      function handleSubmitProduct() {
+        const newProduct = document.getElementById("product").value;
+        product.push(newProduct)
+        localStorage.setItem("product", product);
+      }
+      const dis = (document.getElementById("dis").innerHTML =
+        localStorage.getItem("product"));
+      // localStorage.setItem("product", product)
+      // localStorage.getItem("product")
+      // localStorage.removeItem("product")
+      // localStorage.clear()
+    </script>
+  </body>
+</html>

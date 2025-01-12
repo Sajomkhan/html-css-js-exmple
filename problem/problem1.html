@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // How to number of total fruits
+      const fruits = [
+        { Mango: 3, Orange: 2, Bannana: 5 },
+        { Guava: 4, Apple: 2, Bannana: 10 },
+        { Apple: 3, Orange: 2, Bannana: 20 },
+      ];
+      const countedFruits = {};
+      fruits.forEach((fruit) => {
+        for (key in fruit) {
+          if (countedFruits[key]) {
+            countedFruits[key] = countedFruits[key] + fruit[key];
+          } else {
+            countedFruits[key] = fruit[key];
+          }
+        }
+      });
+      console.log(countedFruits[key]);
+
+      //   How to create a single object of fruit summary
+      const fruits = [
+        { Mango: 3, Orange: 2, Bannana: 5 },
+        { Guava: 4, Apple: 2, Bannana: 10 },
+        { Apple: 3, Orange: 2, Bannana: 20 },
+      ];
+
+      const fruitsSummary = {};
+
+      fruits.forEach((item) => {
+        Object.entries(item).forEach(([fruit, quantity]) => {
+          fruitsSummary[fruit] = (fruitsSummary[fruit] || 0) + quantity;
+        });
+      });
+
+      console.log(fruitsSummary);
+
+      //  or How to create a single object of fruit summary
+      const fruits = [
+        { Mango: 3, Orange: 2, Bannana: 5 },
+        { Guava: 4, Apple: 2, Bannana: 10 },
+        { Apple: 3, Orange: 2, Bannana: 20 },
+      ];
+
+      const fruitsSummary = fruits.reduce((summary, current) => {
+        for (const fruit in current) {
+          summary[fruit] = (summary[fruit] || 0) + current[fruit];
+        }
+        return summary;
+      }, {});
+
+      console.log(fruitsSummary);
+
+
+
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Input Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            width: 300px;
+            margin: 20px auto;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Enter Your Details</h2>
+    <input type="text" id="name" placeholder="Enter your name" required><br>
+    <input type="email" id="email" placeholder="Enter your email" required><br>
+    <button onclick="displayData()">Submit</button>
+
+    <div id="output" class="output" style="display: none;">
+        <p><strong>Name:</strong> <span id="displayName"></span></p>
+        <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+    </div>
+</div>
+
+<script>
+    function displayData() {
+        // Get the values from the input fields
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+
+        // Check if both fields have been filled
+        if (name === "" || email === "") {
+            alert("Please fill in both fields.");
+            return;
+        }
+
+        // Display the values in the output div
+        document.getElementById('displayName').textContent = name;
+        document.getElementById('displayEmail').textContent = email;
+
+        // Show the output div
+        document.getElementById('output').style.display = "block";
+    }
+</script>
+
+</body>
+</html>

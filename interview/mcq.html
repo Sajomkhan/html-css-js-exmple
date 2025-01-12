@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hello world</h1>
+
+    <script>
+
+      
+// ==============STRING===============//
+  const country = "Bangladesh";
+
+      country.length; // 10
+      country[6]; // d
+      
+      Array.from(country) // ['B', 'a', 'n', 'g', 'l', 'a', 'd', 'e', 's', 'h']
+      country.indexOf("g"); // 3
+      country.lastIndexOf("a"); // 5
+      country.search("l"); // 4
+      country.search("L"); // -1
+      country.search(/a/i); // 4
+      
+      country.slice(4, 7); // lad
+
+// ==============URL===============//
+  const url = "banna/mango/apple/orange"
+      url.split("/").pop();
+
+
+// ==============ARRAY==============//
+  const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+      fruits.push("Kiwi")  // returns the new array length: 5
+      fruits  // ['Banana', 'Orange', 'Apple', 'Mango', 'Kiwi']
+
+      fruits.unshift("Lemon");  // returns the new array length: 5
+      fruits //["Lemon", "Banana", "Orange", "Apple", "Mango"];
+
+      fruits.pop() // returns the new array length: 3
+      fruits //[""Banana", "Orange", "Apple",];
+
+      fruits.shift() // returns the new array length: 3
+      fruits //["Orange", "Apple", "Mango"];
+
+      fruits[0] = "Lichi"; // ["Lichi", "Orange", "Apple", "Mango"];
+
+      fruits.sort();  // ['Apple', 'Lichi', 'Mango', 'Orange']  // changed original array
+      fruits.reverse();  // ['Lichi', 'Orange', 'Apple', 'Mango'] // changed original array
+
+      fruits.toSorted(); //as a safe way array keeping original array unchanged
+      fruits.toReversed(); //as a safe way array keeping original array unchanged
+
+      arr1.concat(arr2, arr3);  // The concat() method does not change the existing arrays. It always returns a new array.
+
+      const myArr = [[1,2],[3,4],[5,6]];
+      const newArr = myArr.flat();
+
+      fruits.splice(2, 0, "Lemon", "Kiwi");
+      // The first parameter (2) defines the position where new elements should be added (spliced in).
+      // The second parameter (0) defines how many elements should be removed.
+      // The rest of the parameters ("Lemon" , "Kiwi") define the new elements to be added.
+      // The splice() method returns an array with the deleted items:
+      fruits.splice(2, 2, "Lemon", "Kiwi");
+
+      fruits.slice(2); // Slice out a part of an array starting from array
+
+  const numbers = [30, 50, 25, 5, 10, 100]
+    numbers.sort(function(a, b){return a - b});  // assending
+    numbers.sort(function(a, b){return b - a});  // dessanding
+
+
+// ==============Loop===========//
+
+  const fruits = ["apple", "banana", "cherry", "date"];
+  const fruitQuantities = { apple: 10, banana: 5, cherry: 15, date: 7 };
+
+    // For Loop (Array) 
+    for (let i = 0; i < fruits.length; i++) {
+      console.log(fruits[i]);
+    }
+
+    // For-In Loop (Object-key) 
+    for (const key in fruitQuantities) {
+      console.log(fruitQuantities[key]);
+    }
+
+    for (const index in fruits) {
+      console.log(fruits[index]);
+    }
+
+    // For-Of Loop (Arrays or strings) 
+    for (const fruit of fruits) {
+      console.log(fruit);
+    }
+
+    // forEach (Array) 
+    fruits.forEach((fruit, index) => {
+      console.log(fruit);
+    });
+
+  // Filter - Array of objects 
+  const boys = [{name: "Azman", age: 8}, {name: "Abran", age: 5}];
+
+    const filteredFruits = fruits.filter((fruit) => fruit.startsWith("b"));  // Array
+    const deleteBoy = boys.filter(boy => boy.age !== 8);  // Delete Array of Objects
+    const adults = users.filter(user => user.age > 25);  // Array of Objects
+
+  // Map - Array of objects   
+     const boys_are = boys.map(boy => boy.name);
+
+
+
+
+// ==============TYPE==============//
+      typeof 123; // number
+      typeof 123.5; // number
+      typeof 123n; // bigint
+      typeof null; // object
+      typeof undefined; // undefined
+
+      3 == "3"; // true
+      3 === "3"; // false
+
+      3 * "5"; // 15
+      3 + "5"; // 35
+      3 / "5"; // 0.6
+
+      let x = undefined || null || 0;
+      if (x) {
+        console.log(x); // show nothing
+      } 
+
+    </script>
+  </body>
+</html>

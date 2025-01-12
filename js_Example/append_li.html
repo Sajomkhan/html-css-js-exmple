@@ -6,23 +6,55 @@
     <title>Append li</title>
   </head>
   <body>
-    <div>
+    <div style="margin: ;">
       <ul id="demo_ul"></ul>
+      <ul id="techs"></ul>
     </div>
 
     <script>
-      const tech = ["Jabascript", "TypeScript", "Nodejs", "MongoDB", "MySql"];
+      const techs = ["Jabascript", "TypeScript", "Nodejs", "MongoDB", "MySql"];
 
       function showMessage() {
         const demoUl = document.getElementById("demo_ul");
 
-        tech.map((item) => {
+        techs.map((item) => {
           const createdLi = document.createElement("li");
           demoUl.appendChild(createdLi);
           createdLi.textContent = item;
         });
       }
+
       showMessage();
+
+      const demoList = document.getElementById("techs")
+          
+      function showList () {
+
+        for(let i = 0; i < techs.length; i++){
+          const createList = document.createElement("li")
+          demoList.appendChild(createList)
+          createList.textContent = techs[i]
+        }
+      }
+      showList()
+
+      techs.forEach((item)=>{
+        const createList = document.createElement("li")
+        demoList.appendChild(createList)
+        createList.textContent = item        
+      })
+
+      for (const tech of techs){
+        const createList = document.createElement("li")
+        demoList.append(createList)
+        createList.textContent = tech
+
+      }
+
+
+
+
+
     </script>
 
     <!-- <script>

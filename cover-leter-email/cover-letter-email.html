@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cover Letter (Email)</title>
+    <!---------------------- CSS CODE ---------------------->
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        /* background-color: rgb(17, 17, 17);
+        color: white; */
+      }
+      main {
+        padding: 20px 12px;
+        padding-bottom: 50px;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 40px;
+      }
+      input,
+      select {
+        padding: 10px;
+        margin: 10px 0;
+        width: 200px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+      button {
+        width: fit-content;
+        padding: 10px 20px;
+        margin-top: 10px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #218838;
+      }
+      .pre-wrap-text {
+        white-space: pre-line;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!------------------------- HTML CODE ------------------------->
+    <main>
+      <div class="container">
+        <input type="text" id="company" name="company" placeholder="Company" />
+
+        <select name="position_select" id="position_select"></select>
+
+        <input
+          type="text"
+          id="position"
+          name="position"
+          placeholder="Position"
+        />
+        <button id="apply" onclick="handleSubmit()">Apply</button>
+      </div>
+      <pre class="pre-wrap-text">
+        Application for <span id="displayPosition">[Position]</span> Position
+
+        Dear Sir/Madam,
+
+        I hope this message finds you well. I am writing to express my enthusiastic interest in the <span id="displayPosition">[Position]</span> position at <span id="displayCompany">[Company Name]</span>. With a B.Sc. in Engineering from IEB Bangladesh and over three years of experience as a Full Stack Developer, I am eager to bring my skills and passion to your esteemed organization.
+        
+        My experience includes developing responsive and user-friendly websites and applications using technologies such as HTML, CSS, JavaScript, TypeScript React.js, Next.js,, TailwindCSS, Bootstrap, Redux, Node.js, Express.js, Prisma, MySQL, and MongoDB. Additionally, my proficiency with design tools like Figma and Photoshop enables me to create seamless and visually appealing user experiences.
+        
+        I am particularly drawn to <span id="displayCompany">[Company Name]</span> because of its reputation for innovation and excellence in the tech industry. I am confident that my skills and dedication to continuous learning would make me a valuable asset to your team.
+        
+        You can view my work and projects on my portfolio: https://portfolio-saiful-ajom-khan.netlify.app/  
+        
+        I look forward to the opportunity to discuss how I can contribute to the success of <span id="displayCompany">[Company Name]</span>.
+        
+        Thank you for considering my application. I am excited about the possibility of joining your team and am available for an interview at your earliest convenience.
+        
+        Sincerely,
+        Saiful Ajom Khan
+        Barishal, Bangladesh
+        Email: sajomkhan@gmail.com
+    </pre>
+    </main>
+
+    <!--------------------- JAVASCRIPT CODE --------------------->
+    <script>
+      const positionArray = [
+        "Full Stack Developer",
+        "Frontend Developer",
+        "Front End Developer",
+        "React Developer",
+        "Web Developer",
+        "NodeJS Developer",
+        "Backend Developer",
+      ];
+
+      const selectElement = document.getElementById("position_select");
+
+      const defaultOption = document.createElement("option");
+      defaultOption.value = "";
+      defaultOption.textContent = "-- Position --";
+      selectElement.appendChild(defaultOption);
+
+      positionArray.forEach((item) => {
+        const option = document.createElement("option");
+        option.value = item;
+        // option.value = item.toLowerCase().replace(" ", "-");
+        option.textContent = item;
+        selectElement.appendChild(option);
+      });
+
+      function handleSubmit() {
+        const company = document.querySelector("#company").value;
+        const position_select =
+          document.querySelector("#position_select").value;
+        const position = document.querySelector("#position").value;
+
+        if (company === "" || (!position_select && position === "")) {
+          alert("Please fill in both fields.");
+          return;
+        }
+
+        document.querySelectorAll("#displayCompany").forEach((element) => {
+          element.textContent = company;
+        });
+        document.querySelectorAll("#displayPosition").forEach((element) => {
+          element.textContent = position_select || position;
+        });
+      }
+    </script>
+  </body>
+</html>
